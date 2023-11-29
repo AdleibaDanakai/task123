@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b425aa;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            float: right;
+        }
+    </style>
+
+    <title>Решение оригинальной алгоритмической задачи</title>
+</head>
+<body>
+    <h1>Решение оригинальной алгоритмической задачи</h1>
+
+    <p>Введите вещественное число A для вычисления x в соответствии с условием задачи.</p>
+    
+    <p>Дано вещественное число A. Вычислить x = a2+4+5 при a < 62; в противном случае x = 1/(a2) + 4a + 5) 
+    </p>
+
+    <form id="algorithm-form">
+        <label for="problem-description">Описание задачи:</label>
+        <textarea id="problem-description" rows="4" required></textarea>
+        <label for="input-data">вещественное число A:</label>
+        <input type="number" step="any" id="input-data" required>
+        <button type="submit">Решить</button>
+    </form>
+    
+    <p id="result"></p>
+
+    <button id="sendDataButton">Отправить на сервер Bing</button>
+
+
+    <script>
+        document.getElementById("algorithm-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var description = document.getElementById("problem-description").value;
+            var inputData = parseFloat(document.getElementById("input-data").value);
+            var result;
+
+            if (inputData < 62) {
+                result = inputData * 2 + 4 + 5;
+            } else {
+                result = 1 / (inputData * 2) + 4 * inputData + 5;
+            }
+
+            document.getElementById("result").textContent = "Результат: x = " + result;
+        });
+
+        document.getElementById("sendDataButton").addEventListener("click", function() {
+            var description = document.getElementById("problem-description").value;
+            var inputData = parseFloat(document.getElementById("input-data").value);
+            var result;
+
+            if (inputData < 62) {
+                result = inputData * 2 + 4 + 5;
+            } else {
+                result = 1 / (inputData * 2) + 4 * inputData + 5;
+            }
+
+            var bingURL = "https://www.bing.com/search?q=" + encodeURIComponent(JSON.stringify({
+                description: description,
+                inputData: inputData,
+                result: result
+            }));
+            window.open(bingURL, '_blank');
+
+            alert("Данные отправлены на сервер Bing.");
+        });
+    </script>
+
+        <a href="index.html" class="button">На главную страницу</a>
+
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b425aa;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            float: right;
+        }
+    </style>
+
+    <title>Решение оригинальной алгоритмической задачи</title>
+</head>
+<body>
+    <h1>Решение оригинальной алгоритмической задачи</h1>
+
+    <p>Введите вещественное число A для вычисления x в соответствии с условием задачи.</p>
+    
+    <p>Дано вещественное число A. Вычислить x = a2+4+5 при a < 62; в противном случае x = 1/(a2) + 4a + 5) 
+    </p>
+    
+    
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+        <p><input type="hidden" name="q" value="search"></p>
+        <p>Описание задачи:
+            <br>
+            <textarea cols="80" name="textarea" rows="4"></textarea>
+        </p>
+        <p>
+            <label for="a_param">вещественное число A:</label>
+            <input type="number" id="a_param" name="a_param" required>
+        </p>
+        <input type="submit" value="Отправить">
+        <button id="calc">Решить</button>
+    </form>
+
+    <p id="result"></p>
+
+    <a href="index.html" class="button">На главную страницу</a>
+
+    <script>
+        document.getElementById("calc").onclick = function() {
+            event.preventDefault();
+            var inputData = parseFloat(document.getElementById("a_param").value);
+            var result;
+
+            if (inputData < 62) {
+                result = inputData * 2 + 4 + 5;
+            } else {
+                result = 1 / (inputData * 2) + 4 * inputData + 5;
+            }
+
+            document.getElementById("result").textContent = "Результат: x = " + result;
+        };
+    </script>
+
+</body>
+</html>
